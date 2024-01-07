@@ -1,0 +1,11 @@
+html
+head
+  title Vote for your favorite item
+body
+  h1 Vote for your favorite item
+  
+  form(action='/vote' method='post')
+    each title in titles
+      input(type='radio' name='selectedItem' value=title)
+      br
+    input(type='submit' value='Vote')
