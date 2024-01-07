@@ -18,6 +18,7 @@ app.post('/vote', (req, res) => {
 });
 
 app.post('/submitVote', (req, res) => {
+    handleOutcome(req.body.selectedItem)
     res.render('submitted')
 });
 
@@ -30,4 +31,8 @@ const server = app.listen(7000, () => {
 function pickRandomItems(arr, count) {
     const shuffled = arr.sort(() => 0.5 - Math.random());
     return shuffled.slice(0, count);
+}
+
+function handleOutcome(winner, loser) {
+
 }
