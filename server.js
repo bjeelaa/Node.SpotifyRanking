@@ -11,7 +11,9 @@ app.get("/", (req, res) => {
 
 app.post('/vote', (req, res) => {
     console.log(req.body);
-    res.render('vote', {});
+    titles = ["", ""]
+    covers = ["", ""]
+    res.render('vote', {titles:titles, covers:covers});
 });
 
 const server = app.listen(7000, () => {
