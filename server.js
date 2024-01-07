@@ -11,9 +11,14 @@ app.get("/", (req, res) => {
 
 app.post('/vote', (req, res) => {
     console.log(req.body);
+    rSongs = pickRandomItems(songs, 2)
     titles = ["", ""]
     covers = ["", ""]
     res.render('vote', {titles:titles, covers:covers});
+});
+
+app.post('/submitVote', (req, res) => {
+    res.render('submitted')
 });
 
 const server = app.listen(7000, () => {

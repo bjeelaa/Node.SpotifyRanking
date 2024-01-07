@@ -5,7 +5,7 @@ body
   h1 Vote for your favorite item
   each cover in covers
     img(src=cover)
-  form(action='/vote' method='post')
+  form(action='/submitVote' method='post')
     each title in titles
       input(type='radio' name='selectedItem' value=title)
       br
